@@ -96,7 +96,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3429883550221864197}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -359,12 +359,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSlot: {fileID: 3429883551600952182}
   cam: {fileID: 3429883550983815746}
+  offset: {fileID: 3429883551600952182}
   whatIsItem:
     serializedVersion: 2
     m_Bits: 64
   raycastRange: 30
-  holdDownStart: 0
-  holdDownEnd: 0
+  uiText: {fileID: 0}
 --- !u!1 &3429883551600952185
 GameObject:
   m_ObjectHideFlags: 0

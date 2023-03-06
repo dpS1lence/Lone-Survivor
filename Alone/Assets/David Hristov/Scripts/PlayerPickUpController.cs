@@ -72,17 +72,15 @@ public class PlayerPickUpController : MonoBehaviour
         slotFull = true;
         itemTransform.SetParent(itemSlot);
         itemTransform.localPosition = Vector3.zero;
-        itemTransform.localRotation = Quaternion.Euler(Vector3.zero);
+        itemTransform.localRotation = Quaternion.Euler(new Vector3(0, 90, 0));
         itemTransform.localScale = Vector3.one;
 
         itemRb.isKinematic = true;
         itemCol.isTrigger = true;
         uiText.text = itemCol.name;
-
     }
     private void Drop()
     {
-
         slotFull = false;
 
         itemTransform.SetParent(null);
