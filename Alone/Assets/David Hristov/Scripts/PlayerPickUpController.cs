@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPickUpController : MonoBehaviour
 {
@@ -15,14 +16,21 @@ public class PlayerPickUpController : MonoBehaviour
     public float raycastRange = 75f;
     private float pickUpDistance = 5;
 
-    public float holdDownStart;
-    public float holdDownEnd;
+    private float holdDownStart;
+    private float holdDownEnd;
     [SerializeField] private const float maxHoldTime = 1.5f;
     [SerializeField] private const float maxForce = 15;
+    public Text uiText;
 
 
     private bool slotFull = false;
-
+    private void Awake()
+    {
+        if (slotFull == false)
+        {
+            uiText.text = "Hands";
+        }
+    }
     private void Update()
     {
         RaycastHit hit;
@@ -30,13 +38,10 @@ public class PlayerPickUpController : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, raycastRange, whatIsItem))
         {
             Debug.DrawRay(cam.transform.position, cam.transform.forward, Color.red);
-            Debug.Log(hit.collider.name);
             if (hit.collider.tag == "item")
             {
-
                 if (Input.GetKeyDown(KeyCode.E) && slotFull == false)
                 {
-                    Debug.Log("thrid if");
                     itemTransform = hit.transform;
                     itemRb = hit.rigidbody;
                     itemCol = hit.collider;
@@ -72,7 +77,7 @@ public class PlayerPickUpController : MonoBehaviour
 
         itemRb.isKinematic = true;
         itemCol.isTrigger = true;
-
+        uiText.text = itemCol.name;
 
     }
     private void Drop()
@@ -92,6 +97,7 @@ public class PlayerPickUpController : MonoBehaviour
 
         float random = Random.Range(-1f, 1f);
         itemRb.AddTorque(new Vector3(random, random, random) * 10);
+        uiText.text = "Hands";
     }
 
 
