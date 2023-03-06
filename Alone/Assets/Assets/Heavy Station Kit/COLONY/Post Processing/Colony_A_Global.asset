@@ -17,12 +17,12 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   spectralLut:
-    overrideState: 0
-    value: {fileID: 0}
+    overrideState: 1
+    value: {fileID: 2800000, guid: 65a589c61f93b5f4295fd46d8c7b888a, type: 3}
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.25
+    value: 0
   fastMode:
     overrideState: 0
     value: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -94,9 +94,9 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1
+    value: 1.03
   color:
-    overrideState: 0
+    overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
   ambientOnly:
     overrideState: 0
@@ -111,8 +111,8 @@ MonoBehaviour:
     overrideState: 0
     value: -12
   thicknessModifier:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 2.3
   directLightingStrength:
     overrideState: 0
     value: 0
@@ -1498,7 +1498,7 @@ MonoBehaviour:
     value: 1
   preset:
     overrideState: 1
-    value: 6
+    value: 1
   maximumIterationCount:
     overrideState: 0
     value: 16
@@ -1510,7 +1510,7 @@ MonoBehaviour:
     value: 8
   maximumMarchDistance:
     overrideState: 1
-    value: 500
+    value: 497.71
   distanceFade:
     overrideState: 1
     value: 0
